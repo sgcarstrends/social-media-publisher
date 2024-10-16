@@ -2,6 +2,14 @@
 
 import { AppEnv } from "./src/types";
 
+const DOMAIN_NAME = "sgcarstrends.com";
+
+const DOMAIN = {
+  dev: `dev.publisher.${DOMAIN_NAME}`,
+  staging: `staging.publisher.${DOMAIN_NAME}`,
+  prod: `publisher.${DOMAIN_NAME}`,
+};
+
 export default $config({
   app(input) {
     return {
@@ -12,6 +20,7 @@ export default $config({
   },
   async run() {
     const hono = new sst.cloudflare.Worker("Hono", {
+      domain: DOMAIN[$app.stage],
       url: true,
       handler: "src/index.ts",
     });
