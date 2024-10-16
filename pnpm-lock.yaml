@@ -1,0 +1,152 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      hono:
+        specifier: ^4.6.5
+        version: 4.6.5
+      sst:
+        specifier: ^3.2.31
+        version: 3.2.31(hono@4.6.5)
+    devDependencies:
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
+
+packages:
+
+  aws4fetch@1.0.20:
+    resolution: {integrity: sha512-/djoAN709iY65ETD6LKCtyyEI04XIBP5xVvfmNxsEP0uJB5tyaGBztSryRr4HqMStr9R06PisQE7m9zDTXKu6g==}
+
+  hono@4.6.5:
+    resolution: {integrity: sha512-qsmN3V5fgtwdKARGLgwwHvcdLKursMd+YOt69eGpl1dUCJb8mCd7hZfyZnBYjxCegBG7qkJRQRUy2oO25yHcyQ==}
+    engines: {node: '>=16.9.0'}
+
+  jose@4.15.9:
+    resolution: {integrity: sha512-1vUQX+IdDMVPj4k8kOxgUqlcK518yluMuGZwqlr44FS1ppZB/5GWh4rZG89erpOBOJjU/OBsnCVFfapsRz6nEA==}
+
+  jose@5.2.3:
+    resolution: {integrity: sha512-KUXdbctm1uHVL8BYhnyHkgp3zDX5KW8ZhAKVFEfUbU2P8Alpzjb+48hHvjOdQIyPshoblhzsuqOwEEAbtHVirA==}
+
+  lru-cache@6.0.0:
+    resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
+    engines: {node: '>=10'}
+
+  object-hash@2.2.0:
+    resolution: {integrity: sha512-gScRMn0bS5fH+IuwyIFgnh9zBdo4DV+6GhygmWM9HyNJSgS0hScp1f5vjtm7oIIOiT9trXrShAkLFSc2IqKNgw==}
+    engines: {node: '>= 6'}
+
+  oidc-token-hash@5.0.3:
+    resolution: {integrity: sha512-IF4PcGgzAr6XXSff26Sk/+P4KZFJVuHAJZj3wgO3vX2bMdNVp/QXTP3P7CEm9V1IdG8lDLY3HhiqpsE/nOwpPw==}
+    engines: {node: ^10.13.0 || >=12.0.0}
+
+  openid-client@5.6.4:
+    resolution: {integrity: sha512-T1h3B10BRPKfcObdBklX639tVz+xh34O7GjofqrqiAQdm7eHsQ00ih18x6wuJ/E6FxdtS2u3FmUGPDeEcMwzNA==}
+
+  prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+  sst-darwin-arm64@3.2.31:
+    resolution: {integrity: sha512-IkMU7Vf91tmx74bCX4nCr4u0KJ15hdnIYINK2tIPSpAfANw+ZRSLMV7X4WmmQFFiELCdKWg+6pEtb5EiOpU58A==}
+    cpu: [arm64]
+    os: [darwin]
+
+  sst-darwin-x64@3.2.31:
+    resolution: {integrity: sha512-GXUzVoXbQJo0W01SKHBU8FnLcHKtj6FMzYgFTF7sb5se2za9bVvdIkBVnZM6+oJY5fWacMDSlabgU8Ruv7P28w==}
+    cpu: [x64]
+    os: [darwin]
+
+  sst-linux-arm64@3.2.31:
+    resolution: {integrity: sha512-yV1XZTihiuDVP7BNzTV9DbUl8sHzBEi044n8xIUU/pEr/yJSHliuZqMIESnQ+W0y3o+qJ1Ldr/Mp505TRG9ssQ==}
+    cpu: [arm64]
+    os: [linux]
+
+  sst-linux-x64@3.2.31:
+    resolution: {integrity: sha512-UycmzraCh1zowc7SPMvbooUpIYQfYsiVWiT2H3z7z2rJF1Z8CMY5QHbQfCXXlTSNvbYztOVIlp2AvQ2SXJOVFQ==}
+    cpu: [x64]
+    os: [linux]
+
+  sst-linux-x86@3.2.31:
+    resolution: {integrity: sha512-3t2Al+q/6wRrD06LbyFuN1yj5hAcoUfITQT+XhD9afiTZryKZD+YmeQ7o9VND8iuwLaiBJyoZjxF5myZqdzXRg==}
+    cpu: [x86]
+    os: [linux]
+
+  sst@3.2.31:
+    resolution: {integrity: sha512-YsPUeYITAk9H1c9INpSCvKBvvbxbko4Ep/SiGk0yID8S7I3fewOktSJ6fLeBS6MH1N9l6bL6YAmJ+EJ/YgI96Q==}
+    hasBin: true
+    peerDependencies:
+      hono: 4.x
+      valibot: 0.30.x
+    peerDependenciesMeta:
+      hono:
+        optional: true
+      valibot:
+        optional: true
+
+  yallist@4.0.0:
+    resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
+
+snapshots:
+
+  aws4fetch@1.0.20: {}
+
+  hono@4.6.5: {}
+
+  jose@4.15.9: {}
+
+  jose@5.2.3: {}
+
+  lru-cache@6.0.0:
+    dependencies:
+      yallist: 4.0.0
+
+  object-hash@2.2.0: {}
+
+  oidc-token-hash@5.0.3: {}
+
+  openid-client@5.6.4:
+    dependencies:
+      jose: 4.15.9
+      lru-cache: 6.0.0
+      object-hash: 2.2.0
+      oidc-token-hash: 5.0.3
+
+  prettier@3.3.3: {}
+
+  sst-darwin-arm64@3.2.31:
+    optional: true
+
+  sst-darwin-x64@3.2.31:
+    optional: true
+
+  sst-linux-arm64@3.2.31:
+    optional: true
+
+  sst-linux-x64@3.2.31:
+    optional: true
+
+  sst-linux-x86@3.2.31:
+    optional: true
+
+  sst@3.2.31(hono@4.6.5):
+    dependencies:
+      aws4fetch: 1.0.20
+      jose: 5.2.3
+      openid-client: 5.6.4
+    optionalDependencies:
+      hono: 4.6.5
+      sst-darwin-arm64: 3.2.31
+      sst-darwin-x64: 3.2.31
+      sst-linux-arm64: 3.2.31
+      sst-linux-x64: 3.2.31
+      sst-linux-x86: 3.2.31
+
+  yallist@4.0.0: {}
