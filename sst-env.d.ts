@@ -26,6 +26,14 @@ declare module "sst" {
       "type": "sst.sst.Secret"
       "value": string
     }
+    "TELEGRAM_BOT_TOKEN": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
+    "TELEGRAM_CHANNEL_ID": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
     "TWITTER_BEARER_TOKEN": {
       "type": "sst.sst.Secret"
       "value": string

@@ -1,16 +1,31 @@
 import { RichText } from "@atproto/api";
 import { Hono } from "hono";
 import { showRoutes } from "hono/dev";
+import { HTTPException } from "hono/http-exception";
 import { logger } from "hono/logger";
 import { RestliClient } from "linkedin-api-client";
 import { Resource } from "sst";
 import { TEXT_EXAMPLE } from "./config";
 import agent from "./config/bluesky";
+import telegram from "./routes/telegram";
 // import twitter from "./routes/twitter";
 
 const app = new Hono();
 
 app.use(logger());
+
+app.onError((error, c) => {
+  console.error(error);
+
+  if (error instanceof HTTPException) {
+    return c.json({
+      statusCode: error.status,
+      message: error.message,
+    });
+  }
+
+  return c.json({ error: error }, 500);
+});
 
 app.get("/", (c) => c.json({ message: "Hello World!" }));
 
@@ -93,9 +108,11 @@ app.post("/linkedin", async (c) => {
   }
 });
 
+app.route("/telegram", telegram);
+
 // TODO: Temporary disable Twitter function first
 // app.route("/twitter", twitter);
 
-showRoutes(app);
+showRoutes(app, { colorize: true });
 
 export default app;

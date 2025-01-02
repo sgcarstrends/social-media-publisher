@@ -47,6 +47,14 @@ export default $config({
       "LINKEDIN_ORGANISATION_ID",
       process.env.LINKEDIN_ORGANISATION_ID,
     );
+    const TELEGRAM_CHANNEL_ID = new sst.Secret(
+      "TELEGRAM_CHANNEL_ID",
+      process.env.TELEGRAM_CHANNEL_ID,
+    );
+    const TELEGRAM_BOT_TOKEN = new sst.Secret(
+      "TELEGRAM_BOT_TOKEN",
+      process.env.TELEGRAM_BOT_TOKEN,
+    );
 
     const hono = new sst.cloudflare.Worker("Hono", {
       link: [
@@ -57,9 +65,10 @@ export default $config({
         TWITTER_BEARER_TOKEN,
         LINKEDIN_ACCESS_TOKEN,
         LINKEDIN_ORGANISATION_ID,
+        TELEGRAM_CHANNEL_ID,
+        TELEGRAM_BOT_TOKEN,
       ],
       domain: DOMAIN[$app.stage],
-      url: true,
       handler: "src/index.ts",
     });
 
