@@ -22,6 +22,10 @@ declare module "sst" {
       "type": "sst.sst.Secret"
       "value": string
     }
+    "LINKEDIN_ORGANISATION_ID": {
+      "type": "sst.sst.Secret"
+      "value": string
+    }
     "TWITTER_BEARER_TOKEN": {
       "type": "sst.sst.Secret"
       "value": string

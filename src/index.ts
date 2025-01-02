@@ -61,7 +61,7 @@ app.post("/linkedin", async (c) => {
     const response = await restliClient.create({
       resourcePath: UGC_POSTS_RESOURCE,
       entity: {
-        author: `urn:li:person:${me.data.sub}`,
+        author: `urn:li:organization:${Resource.LINKEDIN_ORGANISATION_ID.value}`,
         lifecycleState: "PUBLISHED",
         specificContent: {
           "com.linkedin.ugc.ShareContent": {
@@ -84,6 +84,7 @@ app.post("/linkedin", async (c) => {
       },
       accessToken,
     });
+    console.log(response);
 
     return c.json(response);
   } catch (e) {

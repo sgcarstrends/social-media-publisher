@@ -43,6 +43,10 @@ export default $config({
       "LINKEDIN_ACCESS_TOKEN",
       process.env.LINKEDIN_ACCESS_TOKEN,
     );
+    const LINKEDIN_ORGANISATION_ID = new sst.Secret(
+      "LINKEDIN_ORGANISATION_ID",
+      process.env.LINKEDIN_ORGANISATION_ID,
+    );
 
     const hono = new sst.cloudflare.Worker("Hono", {
       link: [
@@ -52,6 +56,7 @@ export default $config({
         TWITTER_CLIENT_SECRET,
         TWITTER_BEARER_TOKEN,
         LINKEDIN_ACCESS_TOKEN,
+        LINKEDIN_ORGANISATION_ID,
       ],
       domain: DOMAIN[$app.stage],
       url: true,
