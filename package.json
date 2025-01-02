@@ -1,12 +1,17 @@
 {
+  "name": "@sgcarstrends/social-media",
+  "private": true,
   "scripts": {
     "dev": "sst dev --stage dev"
   },
   "dependencies": {
-    "hono": "^4.6.5",
-    "sst": "^3.2.31"
+    "@atproto/api": "^0.13.24",
+    "hono": "^4.6.15",
+    "linkedin-api-client": "^0.3.0",
+    "sst": "^3.4.46",
+    "twitter-api-sdk": "^1.2.1"
   },
   "devDependencies": {
-    "prettier": "^3.3.3"
+    "@biomejs/biome": "^1.9.4"
   }
 }
