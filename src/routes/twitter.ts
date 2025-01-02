@@ -13,9 +13,9 @@ app.get("/login", async (c) => {
     });
 
     return c.redirect(authUrl);
-  } catch (e) {
-    console.error(e);
-    return c.json({ error: e.message }, 500);
+  } catch (error) {
+    console.error(error);
+    throw error;
   }
 });
 
@@ -30,9 +30,9 @@ app.get("/callback", async (c) => {
     const token = await authClient().requestAccessToken(code);
     console.log(token);
     return c.redirect("/twitter");
-  } catch (e) {
-    console.error(e);
-    return c.json({ error: e.message }, 500);
+  } catch (error) {
+    console.error(error);
+    throw error;
   }
 });
 

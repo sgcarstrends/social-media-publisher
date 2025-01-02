@@ -5,7 +5,7 @@ import { HTTPException } from "hono/http-exception";
 import { logger } from "hono/logger";
 import { RestliClient } from "linkedin-api-client";
 import { Resource } from "sst";
-import { TEXT_EXAMPLE } from "./config";
+import { PLACEHOLDER_TEXT } from "./config";
 import agent from "./config/bluesky";
 import telegram from "./routes/telegram";
 // import twitter from "./routes/twitter";
@@ -46,7 +46,7 @@ app.post("/bsky", async (c) => {
   }
 
   const richText = new RichText({
-    text: TEXT_EXAMPLE,
+    text: PLACEHOLDER_TEXT,
   });
   await richText.detectFacets(agent);
   const response = await agent.post({
@@ -81,7 +81,7 @@ app.post("/linkedin", async (c) => {
         specificContent: {
           "com.linkedin.ugc.ShareContent": {
             shareCommentary: {
-              text: TEXT_EXAMPLE,
+              text: PLACEHOLDER_TEXT,
             },
             shareMediaCategory: "ARTICLE",
             media: [
@@ -102,9 +102,9 @@ app.post("/linkedin", async (c) => {
     console.log(response);
 
     return c.json(response);
-  } catch (e) {
-    console.error(e);
-    return c.json({ error: e.message }, 500);
+  } catch (error) {
+    console.error(error);
+    throw error;
   }
 });
 

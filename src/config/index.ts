@@ -1,1 +1,2 @@
-export const TEXT_EXAMPLE = "Testing API; this is an automated post.";
+export const PLACEHOLDER_TEXT =
+  "We are testing our automated posting. More info: https://sgcarstrends.com/cars";
