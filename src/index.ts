@@ -6,7 +6,7 @@ import { RestliClient } from "linkedin-api-client";
 import { Resource } from "sst";
 import { TEXT_EXAMPLE } from "./config";
 import agent from "./config/bluesky";
-import twitter from "./routes/twitter";
+// import twitter from "./routes/twitter";
 
 const app = new Hono();
 

@@ -1,32 +1,16 @@
 import { Hono } from "hono";
-import { Client } from "twitter-api-sdk";
-import { TEXT_EXAMPLE } from "../config";
 import authClient from "../config/twitter";
 
 const app = new Hono();
 
-app.post("/", async (c) => {
-  try {
-    const token = await authClient().requestAccessToken();
-    console.log(token.token.access_token);
-    const client = new Client(token.token.access_token as string);
-    const response = await client.tweets.createTweet({ text: TEXT_EXAMPLE });
-    console.log(response);
+const STATE = "my-state";
 
-    return c.json(response);
-  } catch (e) {
-    console.error(e);
-    return c.json({ error: e.message }, 500);
-  }
-});
-
-app.get("/auth", async (c) => {
+app.get("/login", async (c) => {
   try {
     const authUrl = authClient().generateAuthURL({
-      state: "my-state",
+      state: STATE,
       code_challenge_method: "s256",
     });
-    console.log(authUrl);
 
     return c.redirect(authUrl);
   } catch (e) {
@@ -36,11 +20,20 @@ app.get("/auth", async (c) => {
 });
 
 app.get("/callback", async (c) => {
-  const { code, state } = c.req.query();
+  try {
+    const { code, state } = c.req.query();
 
-  const token = await authClient().requestAccessToken(code);
+    if (state !== STATE) {
+      return c.text("State isn't matching", 500);
+    }
 
-  return c.json(token);
+    const token = await authClient().requestAccessToken(code);
+    console.log(token);
+    return c.redirect("/twitter");
+  } catch (e) {
+    console.error(e);
+    return c.json({ error: e.message }, 500);
+  }
 });
 
 export default app;
